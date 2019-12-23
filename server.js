@@ -7,38 +7,30 @@ const app = express()
 
 const chatkit = new Chatkit.default({
     instanceLocator: 'v1:us1:cb819bae-40c9-4cc3-bcc1-89300c75fd34',
-    key: '8c50793e-5d78-4aba-9a69-2ed6be3c653f:Din5k++TfErvC+WxtwA5xb/Tg20OF6O5UN5NqzFlghU='
+    key: '8c50793e-5d78-4aba-9a69-2ed6be3c653f:Din5k++TfErvC+WxtwA5xb/Tg20OF6O5UN5NqzFlghU=',
 })
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(cors())
 
-// Create Chatkit user
-
-app.post('/users', (req,res) => {
-    const {username} = req.body
+app.post('/users', (req, res) => {
+    const { username } = req.body
     chatkit
-        .createUser({
-            id: username,
-            name: username
-        })
-        // Created successfully
-        .then(() => res.sendStatus(201))
-        .catch(error => {
-            // If user already exists
-            if (error.error === 'services/chatkit/user_already_exists') {
-                // Continue
-                res.sendStatus(200)
-            } else {
-                // Else log error
-                res.status(error.status).json(error)
-            }
-        })
+      .createUser({
+        id: username,
+        name: username
+      })
+      .then(() => res.sendStatus(201))
+      .catch(error => {
+        if (error.error === 'services/chatkit/user_already_exists') {
+          res.sendStatus(200)
+        } else {
+          res.status(error.status).json(error)
+        }
+      })
 })
-
-// Authenticate user
-
+  
 app.post('/authenticate', (req, res) => {
     const authData = chatkit.authenticate({ userId: req.query.user_id })
     res.status(authData.status).send(authData.body)
