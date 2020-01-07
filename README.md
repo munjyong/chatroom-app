@@ -1,5 +1,9 @@
 # A chatroom application built with React and 'Chatkit' from Pusher
 
+## Prerequisites
+* ***Node.js***
+* ***npm***
+
 ## How to install
 * ***Download .zip or clone repository***
 * ***Use terminal in IDE (or separate window - cd into project directory) and run command "npm install"***
