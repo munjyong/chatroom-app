@@ -43,7 +43,7 @@ class WhosOnlineListItem extends Component {
                 paddingBottom: 2,
             },
             div: {
-                borderRadius: '50%',
+                borderRadius: '',
                 width: 11,
                 height: 11,
                 marginRight: 10,

@@ -45,7 +45,7 @@ class ChatScreen extends Component {
             .then(currentUser => {
                 this.setState({ currentUser })
                 return currentUser.subscribeToRoom({
-                    roomId: "c193ace2-66fc-4cb4-91e3-5107248fa060",
+                    roomId: "23363861-b517-434e-b719-5f9f1c501968",
                     messageLimit: 100,
                     hooks: {
                         onMessage: message => {
@@ -72,7 +72,6 @@ class ChatScreen extends Component {
             .then(currentRoom => {
                 this.setState({ currentRoom })
             })
-
             .catch(error => console.error('error', error))
     }
 
@@ -88,7 +87,7 @@ class ChatScreen extends Component {
                 flex: 1,
             },
             whosOnlineListContainer: {
-                width: '300px',
+                width: '15%',
                 flex: 'none',
                 padding: 20,
                 backgroundColor: '#2c303b',
@@ -96,7 +95,7 @@ class ChatScreen extends Component {
             },
             chatListContainer: {
                 padding: 20,
-                width: '85%',
+                width: '90%',
                 display: 'flex',
                 flexDirection: 'column',
             },

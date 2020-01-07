@@ -31,6 +31,7 @@ class App extends Component {
   }
 
   render() {
+
     if (this.state.currentScreen === 'WhatIsYourUsernameScreen') {
       return <UsernameForm onSubmit={this.onUsernameSubmitted} />
     }

@@ -7,3 +7,109 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   margin: 0;
 }
+
+.input-field {
+  position: relative;
+  width: 50vw;
+  height: 44px;
+  line-height: 1em;
+}
+.input-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #d3d3d3;
+  transition: 0.2s all;
+  cursor: text;
+  font-size: 3em;
+  text-align: center;
+}
+.input-text {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid #d3d3d3;
+  box-shadow: none;
+  color: #111;
+  text-align: center;
+  font-size: 1.5em;
+}
+.input-text:invalid {
+  outline: 0;
+}
+.input-text:focus,
+.input-text:valid {
+  border-color: black;
+}
+.input-text:focus~label,
+.input-text:valid~label {
+  font-size: 2em;
+  top: -1.8em;
+  color: black;
+}
+.button, .tick {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 90vh;
+}
+
+.input-submit {
+  display: none;
+}
+
+.button {
+  width: 100px;
+  height: 100px;
+  background: white;
+  border-radius: 6px;
+  transition: all .3s cubic-bezier(0.67, 0.17, 0.40, 0.83);
+  margin: auto;
+  margin-top: 5em;
+  position: relative;
+}
+
+.button svg {
+  transform: rotate(180deg);
+  transition: all .5s;
+}
+
+.button__circle {
+  width: 120px;
+  height: 120px;
+  background: mediumseagreen;
+  border-radius: 50%;
+  transform: rotate(-180deg);
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.tick {
+  color: black;
+  font-size: 2em;
+  transition: all .1s;
+  /* margin-top: -1.5em; */
+  z-index: 1;
+  position: relative;
+}
+
+button {
+  font-family: Montserrat, sans-serif;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  border: none;
+  width: 100px;
+  height: 100px;
+}

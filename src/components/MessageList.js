@@ -17,7 +17,14 @@ class MessagesList extends Component {
       senderUsername: {
         fontWeight: 'bold',
       },
-      message: { fontSize: 15 },
+      message: { 
+        fontSize: '1.3em',
+        border: '2px solid #dedede',
+        backgroundColor: '#f1f1f1',
+        borderRadius: '10px',
+        padding: '1em',
+        margin: '1em'
+      },
     }
     return (
       <div
